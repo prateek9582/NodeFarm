@@ -46,7 +46,7 @@ var server = http.createServer(function(req, res){
     }
     else if(nurl.pathname == "/product"){
         var id = nurl.query.id;
-        var productname = replace(json[i d],template);
+        var productname = replace(json[id],template);
         res.write(productname);
     }
     else if(req.url == "/api"){
@@ -57,7 +57,8 @@ var server = http.createServer(function(req, res){
     }
     res.end();
 });
+var port = process.env.PORT || 3000;
 
-server.listen(3000, function(){
+server.listen(port, function(){
     console.log("server is listening at port 3000");
 })
